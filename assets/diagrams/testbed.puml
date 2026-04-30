@@ -1,0 +1,140 @@
+@startuml
+title IoT Camp Test Bed — 6 Rooms, 3 SSIDs with PPSK (VLAN-per-Room)
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+
+cloud "Internet (Optional)" as net
+node "UniFi Express 7\n(UX7 Cloud Gateway)\n(One device for entire project)" as ux7
+net --> ux7
+
+' ── Shared SSIDs broadcast by UX7 ──────────────────────────────────────────
+rectangle "SSID: IoT-Lab-Admin\n(VLAN 10 — single PSK)" as ssid_admin
+rectangle "SSID: IoT-Lab-Computers\n(PPSK — VLAN per room)" as ssid_computers
+rectangle "SSID: IoT-Lab-SmartHome\n(PPSK — VLAN per room)" as ssid_smarthome
+
+ux7 --> ssid_admin      : broadcasts
+ux7 --> ssid_computers  : broadcasts
+ux7 --> ssid_smarthome  : broadcasts
+
+' ── Instructor / Admin ──────────────────────────────────────────────────────
+frame "Instructor / Admin" as admin_frame {
+  node "Instructor Laptop\n(VLAN 10 — 10.50.10.0/24)" as instructor
+  ssid_admin --> instructor : PSK → VLAN 10
+}
+
+' ── Student Rooms 1–5 ───────────────────────────────────────────────────────
+package "Student Rooms (1–5)" {
+
+  frame "Room 1" as r1 {
+    node "Raspberry Pi (Room 1)\n(Student/Group)\nVLAN 11 — 10.50.11.10" as pi1
+    component "Home Assistant" as ha1
+    component "Zigbee Coordinator\nZBDongle-E (USB)" as zb1
+    rectangle "Zigbee Sensors\n(Aqara Motion / Door)" as s1
+    rectangle "Wi-Fi IoT Devices\n(Kasa Plug / TP-Link Bulb)\nVLAN 21 — 10.50.21.0/24" as w1
+
+    ssid_computers --> pi1 : PPSK R1-Trusted → VLAN 11
+    ssid_smarthome --> w1  : PPSK R1-IoT → VLAN 21
+    pi1 --> ha1
+    pi1 --> zb1
+    zb1 --> s1 : Zigbee mesh
+    ha1 --> w1 : Allowed control path\n(Trusted → IoT)
+  }
+
+  frame "Room 2" as r2 {
+    node "Raspberry Pi (Room 2)\nVLAN 12 — 10.50.12.10" as pi2
+    component "Home Assistant" as ha2
+    component "Zigbee Coordinator\nZBDongle-E (USB)" as zb2
+    rectangle "Zigbee Sensors\n(Aqara Motion / Door)" as s2
+    rectangle "Wi-Fi IoT Devices\n(Kasa Plug / TP-Link Bulb)\nVLAN 22 — 10.50.22.0/24" as w2
+
+    ssid_computers --> pi2 : PPSK R2-Trusted → VLAN 12
+    ssid_smarthome --> w2  : PPSK R2-IoT → VLAN 22
+    pi2 --> ha2
+    pi2 --> zb2
+    zb2 --> s2 : Zigbee mesh
+    ha2 --> w2 : Allowed control path\n(Trusted → IoT)
+  }
+
+  frame "Room 3" as r3 {
+    node "Raspberry Pi (Room 3)\nVLAN 13 — 10.50.13.10" as pi3
+    component "Home Assistant" as ha3
+    component "Zigbee Coordinator\nZBDongle-E (USB)" as zb3
+    rectangle "Zigbee Sensors\n(Aqara Motion / Door)" as s3
+    rectangle "Wi-Fi IoT Devices\n(Kasa Plug / TP-Link Bulb)\nVLAN 23 — 10.50.23.0/24" as w3
+
+    ssid_computers --> pi3 : PPSK R3-Trusted → VLAN 13
+    ssid_smarthome --> w3  : PPSK R3-IoT → VLAN 23
+    pi3 --> ha3
+    pi3 --> zb3
+    zb3 --> s3 : Zigbee mesh
+    ha3 --> w3 : Allowed control path\n(Trusted → IoT)
+  }
+
+  frame "Room 4" as r4 {
+    node "Raspberry Pi (Room 4)\nVLAN 14 — 10.50.14.10" as pi4
+    component "Home Assistant" as ha4
+    component "Zigbee Coordinator\nZBDongle-E (USB)" as zb4
+    rectangle "Zigbee Sensors\n(Aqara Motion / Door)" as s4
+    rectangle "Wi-Fi IoT Devices\n(Kasa Plug / TP-Link Bulb)\nVLAN 24 — 10.50.24.0/24" as w4
+
+    ssid_computers --> pi4 : PPSK R4-Trusted → VLAN 14
+    ssid_smarthome --> w4  : PPSK R4-IoT → VLAN 24
+    pi4 --> ha4
+    pi4 --> zb4
+    zb4 --> s4 : Zigbee mesh
+    ha4 --> w4 : Allowed control path\n(Trusted → IoT)
+  }
+
+  frame "Room 5" as r5 {
+    node "Raspberry Pi (Room 5)\nVLAN 15 — 10.50.15.10" as pi5
+    component "Home Assistant" as ha5
+    component "Zigbee Coordinator\nZBDongle-E (USB)" as zb5
+    rectangle "Zigbee Sensors\n(Aqara Motion / Door)" as s5
+    rectangle "Wi-Fi IoT Devices\n(Kasa Plug / TP-Link Bulb)\nVLAN 25 — 10.50.25.0/24" as w5
+
+    ssid_computers --> pi5 : PPSK R5-Trusted → VLAN 15
+    ssid_smarthome --> w5  : PPSK R5-IoT → VLAN 25
+    pi5 --> ha5
+    pi5 --> zb5
+    zb5 --> s5 : Zigbee mesh
+    ha5 --> w5 : Allowed control path\n(Trusted → IoT)
+  }
+}
+
+' ── Room 6 — Instructor Demo ────────────────────────────────────────────────
+frame "Room 6 (Instructor Demo)" as r6 {
+  node "Demo Raspberry Pi (Room 6)\nVLAN 16 — 10.50.16.10" as pi6
+  component "Home Assistant" as ha6
+  component "Zigbee Coordinator\nZBDongle-E (USB)" as zb6
+  rectangle "Zigbee Sensors\n(Aqara Motion / Door)" as s6
+  rectangle "Wi-Fi IoT Devices\n(Kasa Plug / TP-Link Bulb)\nVLAN 26 — 10.50.26.0/24" as w6
+
+  ssid_computers --> pi6 : PPSK R6-Trusted → VLAN 16
+  ssid_smarthome --> w6  : PPSK R6-IoT → VLAN 26
+  pi6 --> ha6
+  pi6 --> zb6
+  zb6 --> s6 : Zigbee mesh
+  ha6 --> w6 : Allowed control path\n(Trusted → IoT)
+}
+
+note right of ux7
+- Single UniFi Express 7 provides routing, DHCP, VLANs, and Wi-Fi
+- Only 3 SSIDs broadcast — within UX7 4-per-band hardware limit
+- PPSK maps each room's passphrase to its dedicated VLAN
+- No RADIUS server required — PPSK is native to UniFi
+- Zigbee devices connect via USB coordinator (off Wi-Fi)
+- Internet optional for core labs
+end note
+
+legend right
+= Network Legend =
+IoT-Lab-Admin  : Instructor VLAN 10 (single PSK, 10.50.10.0/24)
+IoT-Lab-Computers : Trusted VLANs 11–16 (PPSK per room, 10.50.1x.0/24)
+IoT-Lab-SmartHome : IoT VLANs 21–26 (PPSK per room, 10.50.2x.0/24)
+Allowed path: Home Assistant (Trusted) can reach same-room IoT devices
+Blocked: IoT cannot initiate back to Trusted; cross-zone lateral blocked by firewall
+Zigbee: Aqara sensors pair to ZBDongle-E via Zigbee mesh (off Wi-Fi)
+endlegend
+
+@enduml
