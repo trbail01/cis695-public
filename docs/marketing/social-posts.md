@@ -1,6 +1,6 @@
 # Social Media Posts
 
-Use these drafts for promoting the Hack Your Room summer camp across Northeast Community College social media channels. Posts are organized by platform and camp phase. Replace bracketed placeholders with finalized links and handles before publishing.
+Drafts for promoting the Hack Your Room summer camp across Northeast Community College social media channels. Posts are organized by platform and camp phase. Replace bracketed placeholders with finalized links and handles before publishing.
 
 ---
 
