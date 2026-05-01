@@ -1,0 +1,5 @@
+# Ignore PlantUML jar downloaded for diagram generation
+tools/plantuml.jar
+.DS_Store
+# Python virtual environment
+.venv/
