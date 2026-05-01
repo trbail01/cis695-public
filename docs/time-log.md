@@ -14,7 +14,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Estimated time: 4.0 hours  
 
 ### December 18, 2025
-- Met with Dr. Garvin to review and discuss three proposed project ideas
+- Met with Professor to review and discuss three proposed project ideas
 - Evaluated scope, feasibility, and academic value of each option
 - Finalized selected project direction  
 - Estimated time: 2.0 hours  
@@ -105,7 +105,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Estimated time: 2.0 hours  
 
 ### February 5, 2026
-- First project update meeting with Dr. Garvin (2:30–3:00 PM)  
+- First project update meeting with Professor (2:30–3:00 PM)  
 - Estimated time: 0.5 hours  
 
 ### February 5, 2026
@@ -162,7 +162,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Estimated time: 2.0 hours  
 
 ### February 26, 2026
-- Second project update meeting with Professor Garvin (2:30–3:00 PM)
+- Second project update meeting with Professor (2:30–3:00 PM)
 - Estimated time: 0.5 hours  
 
 ### February 26, 2026
@@ -206,7 +206,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Estimated time: 4.0 hours  
 
 ### March 19, 2026
-- Third project update meeting with Professor Garvin  
+- Third project update meeting with Professor  
 - Estimated time: 0.5 hours  
 
 ### March 23, 2026
@@ -263,7 +263,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Estimated time: 6.0 hours  
 
 ### April 16, 2026
-- Fifth project update meeting with Professor Garvin (2:30 PM)
+- Fifth project update meeting with Professor (2:30 PM)
 - Finalized project deliverable timeline and requirements:
   - **Final Project Presentation (Meeting 5/6):** Friday, May 1st at 2:30 PM
   - **Prior deliverables required:**
