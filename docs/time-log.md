@@ -1,6 +1,6 @@
 # CIS695 Independent Study – Time Log
 
-This document tracks time spent on planning, research, procurement, setup, and documentation for the IoT-based learning experience project.
+This document provides a public-facing summary of time spent on planning, research, purchasing, environment setup, testing, and documentation for the IoT-based learning experience project. Course-specific details and instructor-identifying information have been omitted to keep this repository appropriate for public access.
 
 ---
 
@@ -225,7 +225,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 ---
 
 <details open>
-<summary><strong>April 2026 (~51.0 hours)</strong></summary>
+<summary><strong>April 2026 (~52.75 hours)</strong></summary>
 
 ### April 7, 2026
 - Refined the one-day camp delivery plan and aligned the lab sequence with the approved project scope
@@ -288,6 +288,10 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Pushed changes to GitHub
 - Estimated time: 2.0 hours  
 
+### April 22, 2026
+- Began working on the final project reflection paper
+- Estimated time: 0.75 hours  
+
 ### April 23, 2026
 - Added Room 6 instructor demo network to the topology (VLAN 16 / VLAN 26) following the existing room numbering pattern
 - Began configuring VLANs and SSIDs on the UniFi Express 7
@@ -306,7 +310,7 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Added and configured the Zigbee USB dongle in Home Assistant, then paired and validated a Zigbee motion sensor
 - Identified remaining setup need: purchase dedicated light fixtures for smart bulb testing (temporarily used a borrowed fixture)
 - Noted instructional design follow-up: define a staged Zigbee onboarding process so students pair devices one-at-a-time and avoid accidental cross-room joins
-- Added the camp flyer from marketing materials and uploaded `marketing/SummerCamp_Flyer.pdf` to the project repository; also conducted direct outreach with marketing regarding camp discoverability and high-school promotion channels
+- Added the camp flyer from marketing materials and uploaded `marketing/SummerCamp_Flyer.pdf` to the project repository; also conducted direct outreach with marketing regarding camp discoverability and student registration
 - Sent follow-up communication after speaking with a prospective student and shared the registration page location for easier access
 - Estimated time: 5.5 hours  
 
@@ -331,12 +335,39 @@ This document tracks time spent on planning, research, procurement, setup, and d
 - Continued work on project report document  
 - Estimated time: 4.0 hours  
 
+### April 30, 2026
+- Continued work on the final project reflection paper  
+- Estimated time: 1.0 hours  
+
+</details>
+
+---
+
+<details open>
+<summary><strong>May 2026 (~3.5 hours)</strong></summary>
+
+### May 1, 2026
+- Delivered the final project presentation to Professor during the fifth scheduled project update meeting 
+- Estimated time: 0.75 hours  
+
+### May 1, 2026
+- Continued work on final project reflection paper  
+- Estimated time: 1.5 hours  
+
+### May 3, 2026
+- Continued work on final project reflection paper  
+- Estimated time: 1.0 hours  
+
+### May 5, 2026
+- Sixth and final project status update phone call with Professor (2:30 PM)
+- Estimated time: 0.25 hours
+
 </details>
 
 ---
 
 ## Running Total
 
-**Total Documented Hours: ~152.25 hours**  
-**Target Required Hours: 150.0 hours**  
-**Remaining: ~0.0 hours (target met)**
+**Total Documented Hours:** ~158 hours  
+**Target Required Hours:** 150.0 hours  
+**Status:** Target met
